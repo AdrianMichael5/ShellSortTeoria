@@ -11,7 +11,7 @@ Este repositório contém implementações completas do algoritmo **Shell Sort**
 
 # 📌 1. SOBRE O PROJETO
 
-Este projeto foi desenvolvido para a disciplina **Teoria da Complexidade e Análise de Tempo de Algoritmos**, tendo como objetivo:
+Este projeto foi desenvolvido para a disciplina de **Teoria**, tendo como objetivo:
 
 - Implementar o algoritmo **Shell Sort** em linguagens distintas.
 - Comparar desempenho entre Python e C.
