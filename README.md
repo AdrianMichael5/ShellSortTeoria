@@ -130,19 +130,43 @@ O arquivo results_shell_sort.csv contém todas as métricas (média e desvio).
 
 
 # 🏗️ 7. COMO REPRODUZIR O PROJETO
-## 1️⃣ Clonar o repositório:
+## 0️⃣ Clonar o repositório:
 ```
 git clone https://github.com/adrianmichael5/shellsortteoria
 cd ShellSortTeoria
 ```
-## 2️⃣ Rodar benchmarks:
+## 1️⃣ Pré-requisitos
+
+- Certifique-se de ter instalado:
+
+- Python 3.x
+
+- GCC (Compilador de C)
+
+Bibliotecas Python necessárias
+
 ```
-python benchmark_shell_sort.py
+pip install matplotlib
 ```
-## 3️⃣ Compilar implementação em C:
+
+## 2️⃣ Compilar implementação em C:
+
+🔹 Windows
+```
+gcc -O2 -o shell_sort_c.exe shell_sort.c
+```
+
+🔹 Linux / Mac
+
 ```
 gcc -O2 -o shell_sort_c shell_sort.c
 ```
+
+## 3️⃣ Rodar benchmarks:
+```
+python benchmark_shell_sort.py
+```
+
 ## 4️⃣ Gerar gráficos:
 ```
 python benchmark_shell_sort.py --include-c
