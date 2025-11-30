@@ -162,12 +162,12 @@ gcc -O2 -o shell_sort_c.exe shell_sort.c
 gcc -O2 -o shell_sort_c shell_sort.c
 ```
 
-## 3️⃣ Rodar benchmarks:
+## 3️⃣ Rodar benchmarks python:
 ```
 python benchmark_shell_sort.py
 ```
 
-## 4️⃣ Gerar gráficos:
+## 4️⃣ Gerar gráficos com C:
 ```
 python benchmark_shell_sort.py --include-c
 ```
