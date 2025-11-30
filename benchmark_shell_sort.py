@@ -107,11 +107,13 @@ def main():
         print(f"[PY] n={n:6d}  mean={mean_ms:8.3f} ms  std={std_ms:8.3f} ms")
 
     # Benchmark C (optional)
+    # AJUSTE PARA WINDOWS: procura por .exe também
     if args.include_c and os.path.exists("shell_sort_c.exe"):
         for n in sizes:
             times = []
             for r in range(reps):
                 data = gen_array(n, seed=r)
+                # AJUSTE PARA WINDOWS: chama o executável com .exe
                 ms = time_c_shell_sort(data, sequence=args.sequence, exe="shell_sort_c.exe")
                 times.append(ms)
             mean_ms = stats.mean(times)
@@ -119,7 +121,7 @@ def main():
             results.append(("c", n, mean_ms, std_ms))
             print(f"[ C ] n={n:6d}  mean={mean_ms:8.3f} ms  std={std_ms:8.3f} ms")
     elif args.include_c:
-        print("Aviso: './shell_sort_c' não encontrado. Compile primeiro com: gcc -O2 -o shell_sort_c shell_sort.c")
+        print("Aviso: './shell_sort_c' (ou .exe) não encontrado. Compile primeiro com: gcc -O2 -o shell_sort_c shell_sort.c")
 
     # Save CSV
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
@@ -153,6 +155,21 @@ def main():
         plt.tight_layout()
         plt.savefig("plot_python_vs_c.png", dpi=160)
         plt.close()
+
+    # --- TABELA DE RESUMO FORMATADA ---
+    print("\n" + "="*62)
+    print(f"{'RESUMO DOS RESULTADOS':^62}")
+    print("="*62)
+    print(f"| {'Ling.':<10} | {'N (Tam.)':<10} | {'Média (ms)':<15} | {'Desvio Pad.':<15} |")
+    print("-" * 62)
+
+    for impl, n, mean, std in results:
+        # Deixa o nome da linguagem mais bonito
+        nome_ling = "Python" if impl == "python" else "C"
+        print(f"| {nome_ling:<10} | {n:<10} | {mean:<15.4f} | {std:<15.4f} |")
+    
+    print("="*62 + "\n")
+    # ----------------------------------
 
     print("Arquivos gerados:")
     print(" - results_shell_sort.csv")
