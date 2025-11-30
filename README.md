@@ -132,7 +132,7 @@ O arquivo results_shell_sort.csv contém todas as métricas (média e desvio).
 # 🏗️ 7. COMO REPRODUZIR O PROJETO
 ## 1️⃣ Clonar o repositório:
 ```
-git clone https://github.com/SEU_USUARIO/SEU_REPO.git
+git clone [https://github.com/SEU_USUARIO/SEU_REPO.git](https://github.com/adrianmichael5/shellsortteoria)
 cd SEU_REPO
 ```
 ## 2️⃣ Rodar benchmarks:
