@@ -107,12 +107,12 @@ def main():
         print(f"[PY] n={n:6d}  mean={mean_ms:8.3f} ms  std={std_ms:8.3f} ms")
 
     # Benchmark C (optional)
-    if args.include_c and os.path.exists("./shell_sort_c"):
+    if args.include_c and os.path.exists("shell_sort_c.exe"):
         for n in sizes:
             times = []
             for r in range(reps):
                 data = gen_array(n, seed=r)
-                ms = time_c_shell_sort(data, sequence=args.sequence, exe="./shell_sort_c")
+                ms = time_c_shell_sort(data, sequence=args.sequence, exe="shell_sort_c.exe")
                 times.append(ms)
             mean_ms = stats.mean(times)
             std_ms = stats.pstdev(times)
