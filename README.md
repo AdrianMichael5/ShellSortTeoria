@@ -55,7 +55,51 @@ A escolha da sequência de gaps influencia fortemente o desempenho.
 
 ---
 
-# 🧮 4. IMPLEMENTAÇÕES
+# 🏗️ 4. COMO REPRODUZIR O PROJETO
+## 0️⃣ Clonar o repositório:
+```
+git clone https://github.com/adrianmichael5/shellsortteoria
+cd ShellSortTeoria
+```
+## 1️⃣ Pré-requisitos
+
+- Certifique-se de ter instalado:
+
+- Python 3.x
+
+- GCC (Compilador de C)
+
+Bibliotecas Python necessárias
+
+```
+pip install matplotlib
+```
+
+## 2️⃣ Compilar implementação em C:
+
+🔹 Windows
+```
+gcc -O2 -o shell_sort_c.exe shell_sort.c
+```
+
+🔹 Linux / Mac
+
+```
+gcc -O2 -o shell_sort_c shell_sort.c
+```
+
+## 3️⃣ Rodar benchmarks python:
+```
+python benchmark_shell_sort.py
+```
+
+## 4️⃣ Gerar gráficos com C:
+```
+python benchmark_shell_sort.py --include-c
+```
+
+
+# 🧮 5. IMPLEMENTAÇÕES
 
 ## ✔️ PYTHON — `shell_sort.py`
 
@@ -113,7 +157,7 @@ python benchmark_shell_sort.py --sequence knuth
 python benchmark_shell_sort.py --sizes 2000,5000,10000 --reps 30
 ```
 
-# 📊 6. GRÁFICOS E RESULTADOS
+# 📊 7. GRÁFICOS E RESULTADOS
 
 Os gráficos gerados automaticamente incluem:
 
@@ -127,28 +171,3 @@ Os gráficos gerados automaticamente incluem:
 → Comparação direta entre Python e C
 
 O arquivo results_shell_sort.csv contém todas as métricas (média e desvio).
-
-
-# 🏗️ 7. COMO REPRODUZIR O PROJETO
-## 1️⃣ Clonar o repositório:
-```
-git clone https://github.com/adrianmichael5/shellsortteoria
-cd ShellSortTeoria
-```
-## 2️⃣ Rodar benchmarks:
-```
-python benchmark_shell_sort.py
-```
-## 3️⃣ Compilar implementação em C:
-```
-gcc -O2 -o shell_sort_c shell_sort.c
-```
-## 4️⃣ Gerar gráficos:
-```
-python benchmark_shell_sort.py --include-c
-```
-
-
-
-
-
